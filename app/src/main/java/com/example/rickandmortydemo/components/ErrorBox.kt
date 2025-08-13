@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -19,4 +20,10 @@ fun ErrorBox(message: String?, onRetry: () -> Unit, modifier: Modifier = Modifie
             Button(onClick = onRetry) { Text("Retry") }
         }
     }
+}
+
+@Preview(showBackground = false)
+@Composable
+fun ErrorBoxPreview() {
+    ErrorBox(message = "Something went wrong", onRetry = {})
 }

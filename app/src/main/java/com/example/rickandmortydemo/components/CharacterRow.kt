@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.rickandmortydemo.dto.Character
@@ -42,4 +43,20 @@ fun CharacterRow(ch: Character, onClick: () -> Unit) {
         Text("#${ch.id}", style = MaterialTheme.typography.labelMedium)
     }
     HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
+}
+
+@Preview
+@Composable
+fun CharacterRowPreview() {
+    CharacterRow(
+        ch = Character(
+            id = 1,
+            name = "Rick Sanchez",
+            status = "Alive",
+            species = "Human",
+            gender = "Male",
+            image = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        ),
+        onClick = {}
+    )
 }
